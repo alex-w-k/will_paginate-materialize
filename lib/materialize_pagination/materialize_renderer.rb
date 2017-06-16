@@ -6,13 +6,13 @@ module MaterializePagination
 
     # @return [String] list of pagination links
     def html_container(html)
-      tag :div, tag(:ul, html, :class => "pagination"), class: 'row'
+      tag(:ul, html, class: "pagination")
     end
 
     # @return [String] rendered pagination link
     def page_number(page)
       classes = page == current_page ? 'active' : 'waves-effect'
-      tag :li, link(page, page, :rel => rel_value(page)), :class => classes
+      tag :li, link(page, page, rel: rel_value(page)), class: classes
     end
 
     # @return [String] rendered gap between pagination links
